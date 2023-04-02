@@ -18,14 +18,16 @@ function caseInsensitivePlayerInput(playerInput) {
 
 //Return player selection after all checks/corrections
 function playerSelection(playerInput) {
-    while (caseInsensitivePlayerInput(playerInput) != "Rock" && caseInsensitivePlayerInput(playerInput) != "Paper" && (caseInsensitivePlayerInput(playerInput) != "Scissors")) {
+    while ((caseInsensitivePlayerInput(playerInput) != "Rock") &&
+        (caseInsensitivePlayerInput(playerInput) != "Paper") &&
+        (caseInsensitivePlayerInput(playerInput) != "Scissors")) {
         playerInput = prompt("Enter your choice:\nRock, Paper or Scissors?").trim();
     }
     let selection = caseInsensitivePlayerInput(playerInput);
     return selection;
 }
 
-//
+//play ONE round of game
 function playRound(playerSelection, getComputerChoice) {
     console.log("---------------------------------");
     if (playerSelection == getComputerChoice) {
@@ -60,7 +62,7 @@ function playRound(playerSelection, getComputerChoice) {
     }
 }
 
-//
+//main game loop, play 5 rounds and declare winner
 function game(playRound) {
 
     let gameStatus = "",
