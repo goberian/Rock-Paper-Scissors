@@ -27,8 +27,6 @@ function playerSelection(playerInput) {
 
 //
 function playRound(playerSelection, getComputerChoice) {
-    //console.log("Player Value inside Round Loop:", playerSelection);
-    //console.log("Computer Value inside Round loop:", getComputerChoice);
     console.log("---------------------------------");
     if (playerSelection == getComputerChoice) {
         console.log("It's a Tie!");
@@ -69,7 +67,8 @@ function game(playRound) {
         playerScore = 0,
         computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
+    let i = 0;
+    while (i < 5) {
         playerInput = prompt("Enter your choice:\nRock, Paper or Scissors?").trim();
         gameStatus = playRound(playerSelection(playerInput), getComputerChoice());
         if (gameStatus == "draw") {
@@ -82,6 +81,7 @@ function game(playRound) {
         }
         console.log("Player Score:", playerScore);
         console.log("Computer Score:", computerScore);
+        i++;
     }
     console.log("---------------------------------");
     if (playerScore == computerScore) {
@@ -95,35 +95,11 @@ function game(playRound) {
     }
 }
 
-
-
 //Trigger game
 game(playRound);
 
 
 
 
-
-
-
-
-
-//////////////////////////////////////-----HELPERS-----///////////////////////////////////////
-//console.log("Computer choice:", getComputerChoice());
-//console.log("Player Input:", playerInput);
-//console.log("True if input is only Letters:", onlyLetters(playerInput));
-//console.log("Case Insensitive conversion:", caseInsensitivePlayerInput(playerInput));
-//console.log("Player Selection:", playerSelection(playerInput));
-//playRound(playerSelection(playerInput), getComputerChoice());
-
-
-
-
-
-//Not needed anymore
-//Returns true if user input only contains characters A-Z || a-z//
-// function onlyLetters(playerInput) {
-//     return /^[A-Za-z]*$/.test(playerInput);
-// }
 
 
